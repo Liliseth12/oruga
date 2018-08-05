@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Concurso para diseñadores</title>
+	<style type="text/css">
+	body{
+		text-align: center;
+		margin: 0 auto;
+  	}
+  	form{
+ 		margin: 0 auto;
+  		text-align: left;
+  		width: 80%;
+   	}
+	</style>
+</head>
+<body>
+	<!--Encabezado-->
+	<h1 align="center">Concurso de diseñadores</h1>
+	<h3 align="center">Por favor, rellene el formulario</h3>
+	<!--formulario-->
+	<form method="post" action="proceso.php">
+		Nombre: <input type="text" name="nombre" required><br>
+		Apellido: <input type="text" name="apellido" required><br>
+		<select type="button" name="nacionalidad" id="youarefrom" required>
+			<option value=" "></option>
+			<option value="venezolano">V</option>
+			<option value="extranjero">E</option>
+		</select>
+		C.I: <input type="text" name="ci" required><br>
+		Fecha de Nacimiento:<input type="date" id="fecha" required onchange="probabilidad();"><br>
+		Título de la imagen: <input type="text" name="titulo"><br>
+		Descripción: <input type="text" name="descripcion"><br>
+		Imagen con la que participa:<input type="file" name="imagen" required><br>	
+		<input type="submit" name="submit" value="Enviar">
+	</form>
+	<!--scripts-->
+	<script type="text/javascript">
+	function probabilidad(){
+		var oblig = document.getElementById("fecha").value;
+		var year;
+		year = oblig.substr(0,4);
+		if(year>1000){
+			alert(alert);
+		}
+	}	
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?php
+
+$name = $_POST["nombre"];
+$lname = $_POST["apellido"];
+$nac = $_POST["nacionalidad"];
+$ci = $_POST["ci"];
+$date = $_POST["fecha"];
+
+if($name && $lname && $nac && $ci && $date){
+	mysql_connect("localhost", "root", "") or die("No connection");
+	mysql_select_db("orugastudio");
+	mysql_query("INSERT INTO participantes(nombre, apellido, nacionalidad, ci, fechan) VALUES('$name', '$lname', '$nac', '$ci', '$date')");
+	$registro = mysql_affected_rows();
+	echo $registro." lineas han sido afectadas";
+}else{
+	echo "Hay algo mal";
+}
+mysql_close();
+?>
